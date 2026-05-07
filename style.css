@@ -814,7 +814,7 @@ hr {
   .nav-links { display: flex; }
   
 }
-@media (max-width: 450px){
+@media (max-width: 480px){
    hr { display: none; }
 }
 
