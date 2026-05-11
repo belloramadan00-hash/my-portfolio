@@ -818,3 +818,7 @@ hr {
    hr { display: none; }
 }
 
+
+@media (max-width: 828px){
+   hr { display: none; }
+}
