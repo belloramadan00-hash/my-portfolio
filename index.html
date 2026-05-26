@@ -209,6 +209,27 @@
         const nav = document.getElementById('navbar');
         nav.classList.toggle('scrolled', window.scrollY > 30);
       });
+
+      // Scroll-reveal for project cards
+      const cards = document.querySelectorAll('.financeflow');
+
+      const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            revealObserver.unobserve(entry.target); // animate once
+          }
+        });
+      }, {
+        threshold: 0.15,
+        rootMargin: '0px 0px -40px 0px'
+      });
+
+      cards.forEach((card, i) => {
+        // Stagger: each card delays slightly more than the previous
+        card.style.transitionDelay = `${i * 100}ms`;
+        revealObserver.observe(card);
+      });
     </script>
   </body>
 </html>
